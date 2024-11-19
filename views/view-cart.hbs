@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <button onclick="window.location.href='/customer-home?id={{customerId}}'">Home</button>
+        <h2>Your Cart</h2>
+        <ul>
+            {{#each cart}}
+            <li>
+                <p>Item: {{this.item}}</p>
+                <p>Price: {{this.price}}</p>
+                <p>Quantity: {{this.quantity}}</p>
+            </li>
+            {{/each}}
+        </ul>
+        <h3>Total: {{total}}</h3>
+        <form action="/order" method="POST">
+            <input type="hidden" name="customerId" value="{{customerId}}">
+            <input type="hidden" name="restaurantId" value="{{restaurantId}}">
+            <button type="submit">Order</button>
+        </form>
+    </body>
+</html>

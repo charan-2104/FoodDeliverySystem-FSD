@@ -1,0 +1,41 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      onclick="window.location.href='/customer-home?id={{customerId}}'"
+    >Home</button>
+    <h2>Order History</h2>
+
+    <ul>
+      {{#each orders}}
+        <li>
+          <h3>
+            Restaurant Name :
+            {{this.restaurantName}}
+            <button
+              onclick="window.location.href='/menu?customerId={{this.customerId}}&restaurantId={{this.restaurantId}}'"
+            >view menu</button>
+          </h3>
+          <ul>
+            {{#each this.items}}
+              <li>
+                <p>{{this.name}} - {{this.quantity}}</p>
+                <p>{{this.price}} Rs</p>
+              </li>
+
+            {{/each}}
+          </ul>
+          <p>Order palced on {{this.createdAt}}</p>
+          <h4>Total Amount : {{this.total}} Rs</h4>
+        </li>
+        <h1
+        >--------------------------------------------------------------------------</h1>
+
+      {{/each}}
+    </ul>
+  </body>
+</html>

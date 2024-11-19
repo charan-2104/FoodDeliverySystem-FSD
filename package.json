@@ -1,0 +1,23 @@
+{
+  "name": "food-delivery-sample-pages",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "hbs": "^4.2.0",
+    "mongodb": "^6.10.0",
+    "path": "^0.12.7",
+    "render": "^0.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}

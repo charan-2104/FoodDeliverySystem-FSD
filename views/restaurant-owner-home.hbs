@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Owner Home</title>
+</head>
+<body>
+    <button onclick="window.location.href='/'">Logout</button>
+    <h2>Welcome to Restaurant Owner Home Page</h2>
+    
+    {{#if isRegistered}}
+        <!-- Buttons for registered restaurants -->
+        <button onclick="window.location.href='/view-menu?ownerId={{ownerId}}&restaurantId={{restaurantId}}'" >View Menu</button> <br> <br>
+        <button onclick="window.location.href='/add-items?ownerId={{ownerId}}&restaurantId={{restaurantId}}'" >Add Items</button> <br> <br>
+        <button onclick="window.location.href='/restaurant-order-history?ownerId={{ownerId}}&restaurantId={{restaurantId}}'">Order History</button> <br> <br>
+    {{else}}
+        <!-- Button for new restaurant registration -->
+        <button onclick="window.location.href='/add-details?ownerId={{ownerId}}'" id="details">Add Details</button>
+
+    {{/if}}
+</body>
+</html>

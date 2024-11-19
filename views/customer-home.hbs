@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <button onclick="window.location.href='/'">Logout</button>
+  <h1>Welcome, {{customerName}}!</h1>
+  <h2>Available Restaurants</h2>
+
+  <ul>
+    {{#each restaurants}}
+      <li>
+        <h3>{{this.name}}</h3>
+        <p>Area: {{this.address.area}}</p>
+        <p>Rating: {{this.rating}}/5</p>
+        <button onclick="window.location.href='/menu?customerId={{../customerId}}&restaurantId={{this._id}}'">
+          View Menu
+        </button>
+      </li>
+    {{/each}}
+  </ul>
+  <br>
+
+  <button onclick="window.location.href='/order-history?id={{customerId}}'">Order History</button>
+ 
+</body>
+</html>
